@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app:
+    hostname: app
+    #restart: unless-stopped
+    build: .
+    #command: npx webpack-dev-server --host 0.0.0.0 --port 8080
+    command: ng serve --public-host  --host  0.0.0.0
+    ports:
+      - "4200:4200"
+      #- "9876:9876" # for testing
+      #- "9222:9222" # for testing
+    working_dir: /root/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./app:/root/app

@@ -1,0 +1,2 @@
+sudo docker-compose run --rm app ng $@
+sudo chown -R $USER ./app
